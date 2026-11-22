@@ -1,0 +1,102 @@
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.login-card h2 {
+    text-align:center;
+    color: #172554;
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #172554;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #172554;
+}
+.login-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.login-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.name-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+.name-fields .form-group {
+    min-width: 0;
+}
+.name-fields input {
+    min-width: 0;
+}
+@media (max-width: 480px) {
+    .name-fields {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+.auth-submit-button {
+    width: 100%;
+    margin-top: 4px;
+    padding: 13px;
+    background: navy;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.auth-submit-button:hover {
+    background: grey;
+}
+.auth-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.error-message {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.signup-link{
+    text-align: center;
+    margin-top: 20px;
+
+}
+.signup-link a{
+    color: navy;
+    font-weight: 600;
+    text-decoration: none;
+}

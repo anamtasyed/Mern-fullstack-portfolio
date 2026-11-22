@@ -1,0 +1,143 @@
+import "./pages.css";
+
+interface Project {
+  title: string;
+  image: string;
+  description: string;
+  role: string;
+  projectType: string;
+  outcome: string;
+  technologies: string[];
+}
+
+const projects: Project[] = [
+  {
+    title: "AI-Assisted Publishing Pipeline",
+    image: "/public.tsx/publishing-pipeline.png",
+    description:
+      "An AI-assisted pipeline for organizing and transforming archived blog content into structured published works.",
+    role: "Contributor",
+    projectType: "Team Project",
+    outcome:
+      "Created a structured workflow for organizing and analyzing archived content.",
+    technologies: [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "TypeScript",
+      "Machine Learning",
+      "RAG",
+      "MongoDB",
+      "Data Analysis"
+    ]
+  },
+  {
+    title: "ML-Based Firewall",
+    image: "/public.tsx/ml-firewall.svg",
+    description:
+      "A machine learning system designed to detect suspicious network traffic.",
+    role: "ML Developer",
+    projectType: "School Project",
+    outcome:
+      "Developed a system for identifying potentially suspicious network activity.",
+    technologies: [
+      "Python",
+      "SQL",
+      "Flask",
+      "JavaScript",
+      "Machine Learning"
+    ]
+  },
+  {
+    title: "AI Powered Resume Analyzer",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "A tool that analyzes resumes and provides feedback on skills, formatting, and areas for improvement.",
+    role: "Software Developer",
+    projectType: "Personal Project",
+    outcome:
+      "Built an application that helps users improve their resumes using structured analysis.",
+    technologies: [
+      "Python",
+      "Flask",
+      "Machine Learning",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  }
+];
+
+function Projects() {
+  return (
+    <section className="projects-page">
+
+      <div className="projects-header">
+        <h1>My Projects</h1>
+        <p>
+          A collection of my academic and personal software engineering,
+          artificial intelligence, and machine learning projects.
+        </p>
+      </div>
+
+      <div className="projects-container">
+
+        {projects.map((project) => (
+          <div className="project-card" key={project.title}>
+
+            <div className="project-image">
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                />
+              ) : (
+                <div className="image-placeholder">
+                  Project Image
+                </div>
+              )}
+            </div>
+
+            <div className="project-content">
+
+              <h2>{project.title}</h2>
+
+              <p className="project-description">
+                {project.description}
+              </p>
+
+              <p>
+                <strong>Role:</strong> {project.role}
+              </p>
+
+              <p>
+                <strong>Project Type:</strong> {project.projectType}
+              </p>
+
+              <p>
+                <strong>Outcome:</strong> {project.outcome}
+              </p>
+
+              <div className="technologies">
+                {project.technologies.map((technology) => (
+                  <span
+                    className="technology"
+                    key={technology}
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+    </section>
+  );
+}
+
+export default Projects;
